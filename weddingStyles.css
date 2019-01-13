@@ -1,0 +1,36 @@
+/*
+Style sheet for Project and JP Web site
+Author: Jacob Pell
+Initial date 11/14/2018
+Used to modify or specify bootstrap framework
+*/
+
+img {
+	height: 100%!important;
+}
+img.watermark {
+	height: 276px!important;
+	opacity: 0.5;
+}
+nav ul {
+	width: 80%;
+}
+button#login {
+}
+input.error {
+	box-shadow: 1px 1px 8px #ff5151 inset, -1px -1px 8px #ff5151 inset;
+}
+.errRed {
+	color: #ff7c7c!important;
+}
+article p {
+	margin: 20px;
+}
+article {
+	margin: 25px;
+}
+img.round {
+	border-radius: 50%;
+	max-width: 230px!important;
+	max-height: 210px!important;
+}
