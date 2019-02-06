@@ -63,7 +63,7 @@ ARTDOC;
 
 #Custom made slide show for our wedding photos using bootstrap.
 echo <<<ARTDOC
-<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselIndicators" class="carousel slide w-50 h-50" data-ride="carousel">
   	<ol class="carousel-indicators">
     	<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
     	<li data-target="#carouselIndicators" data-slide-to="1"></li>
@@ -71,13 +71,13 @@ echo <<<ARTDOC
   	</ol>
   	<div class="carousel-inner">
     	<div class="carousel-item active">
-      		<img class="d-block w-100" src="Austyn_and_I.jpg" alt="Happy couple looking at camera">
+      		<img class="d-block w-100 h-100" src="img/Austyn_and_I.jpg" alt="Happy couple looking at camera">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-100" src="Austyn_and_I_blanket.jpg" alt="happy couple kissing with blanket on shoulders">
+      		<img class="d-block w-100 h-100" src="img/Austyn_and_I_blanket.jpg" alt="happy couple kissing with blanket on shoulders">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-100" src="ring_on_leaf.jpg" alt="Ring on a leaf">
+      		<img class="d-block w-100 h-100" src="img/ring_on_leaf.jpg" alt="Ring on a leaf">
     	</div>
   	</div>
   	<a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
