@@ -13,6 +13,7 @@ echo <<<FOOTDOC
     <p class="text-center col mb-0 mx-auto" id="copyright">&copy; $year. JPWeb.</p>
   </div>
 </footer>
+<script src="wedding.js"></script>
 FOOTDOC;
 
 echo "</body>\n</html>";

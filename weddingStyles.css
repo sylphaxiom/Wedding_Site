@@ -23,6 +23,9 @@ input.error {
 .errRed {
 	color: #ff7c7c!important;
 }
+.validGreen{
+	color: #059B16!important;
+}
 article p {
 	margin: 20px;
 }
