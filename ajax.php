@@ -13,7 +13,7 @@ require("connecti2db.inc.php");
 
 if(!empty($_GET['uname']))
 {
-	$uname = +$_GET['uname'];
+	$uname = $_GET['uname'];
 	$uname = mysqli_real_escape_string($connection, stripslashes($uname));
 
 	$query = "SELECT username
