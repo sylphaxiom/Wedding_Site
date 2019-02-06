@@ -35,6 +35,6 @@ img.round {
 	max-height: 210px!important;
 }
 div.carousel-item img {
-	max-height: 500px!important;
-	width: auto;
+	max-height: 600px!important;
+	width: auto!important;
 }
