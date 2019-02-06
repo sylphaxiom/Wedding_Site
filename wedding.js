@@ -21,6 +21,8 @@ function setUpPage() {
 	createEventListeners();
 }
 
+/* Validate the username field */
+
 function validateUname() 
 {
 	console.log("beginning username validation");
@@ -29,17 +31,108 @@ function validateUname()
 	try
 	{
 		if(!/^\w{5,10}/.test(uname)){
+			console.log("Entering not valid");
 			inValid = false;
-			throw "Username not between 5 and 10 characters. Username is " + uname;
-		} else {
+			throw "Username not between 5 and 10 characters.";
+		}
+		if(inValid == true) {
+			console.log("Entering valid");
 			AjaxFunction("username");
+		}
+		else{
+			console.log("Something went Wrong, validation failed");
 		}
 	}//end try
 	catch(e){
-		console.log(e);
-		document.getElementById("unameHelp").classList.add("errRed");
+		console.log(e + "Username is " + uname);
+		var help = document.getElementById("unameHelp");
+		help.classList.add("errRed");
+		help.classList.remove("validGreen");
+		help.classList.remove("text-muted");
+		help.innerHTML = e;
+		inValid = true;
+	}//end catch
+	finally{
+		createEventListeners();
 	}
 }//end validateUname
+
+function validatePass1(){
+	console.log("beginning password1 validation");
+	var pass = document.getElementById("password1").value;
+	var help = document.getElementById("pwHelp");
+	try
+	{
+		if(/^\w{8,15}/.test(pass)){
+			console.log("Entering valid length");
+			if (/[A-Z]+/.test(pass)){
+				console.log("Entering valid Cap");
+				if (/[0-9]+/.test(pass)){
+					console.log("Entering valid Num: password passes validation");
+					help.innerHTML = "Password is valid!";
+					help.classList.add("validGreen");
+					help.classList.remove("errRed");
+					help.classList.remove("text-muted");
+				}
+				else {
+					console.log("Entering invalid Num");
+					throw "Password must contain at least 1 number.";
+				}
+			}
+			else {
+				console.log("Entering invalid Cap");
+				throw "Password must contain at least 1 capital letter.";
+			}
+		}
+		else {
+			console.log("Entering invalid length");
+			throw "Password not between 8 and 15 characters.";
+		}
+	}//end try
+	catch(e){
+		console.log(e + "Password is " + pass);
+		help.classList.add("errRed");
+		help.classList.remove("validGreen");
+		help.classList.remove("text-muted");
+		help.innerHTML = e;
+	}//end catch
+	finally{
+		createEventListeners();
+	}
+}//end validatePass1
+
+function validatePass2(){
+	console.log("beginning password2 validation");
+	var pass = document.getElementById("password2").value;
+	var validPass = document.getElementById("password1").value;
+	var help = document.getElementById("pwErr");
+	try
+	{
+		if(pass === validPass){
+			console.log("Entering valid password passes validation");
+			help.innerHTML = "Passwords are a match!";
+			help.classList.add("validGreen");
+			help.classList.remove("errRed");
+			help.classList.remove("text-muted");
+		}
+		else {
+			console.log("Entering invalid match");
+			throw "Passwords do not match!";
+		}
+	}//end try
+	catch(e){
+		console.log(e + "Password is " + pass);
+		help.classList.add("errRed");
+		help.classList.remove("validGreen");
+		help.classList.remove("text-muted");
+		help.innerHTML = e;
+	}//end catch
+	finally{
+		createEventListeners();
+	}
+}//end validatePass2
+
+/* Ajax function to validate username against the database */
 
 function AjaxFunction(item) 
 {
@@ -76,13 +169,17 @@ function AjaxFunction(item)
 				var ajaxDisplay = document.getElementById('unameHelp');
 				var resultText = ajaxRequest.responseText;
 				ajaxDisplay.innerHTML = resultText;
-				if (resultText.includes("yes"))
+				if (resultText.includes("Yes"))
 				{
 					ajaxDisplay.classList.add("validGreen");
+					ajaxDisplay.classList.remove("errRed");
+					ajaxDisplay.classList.remove("text-muted");
 				}
-				else if (resultText.includes("sorry"))
+				else if (resultText.includes("Sorry"))
 				{
 					ajaxDisplay.classList.add("errRed");
+					ajaxDisplay.classList.remove("validGreen");
+					ajaxDisplay.classList.remove("text-muted");
 				}
 				else
 				{
@@ -101,15 +198,32 @@ function AjaxFunction(item)
 	}
 }
 
+/* Create event listeners on load and to re-instate after functions */
+
 function createEventListeners(){
 	var username = document.getElementById("username");
 	if(username.addEventListener){
-		username.addEventListener("blur", validateUname, false);
+		username.addEventListener("input", validateUname, false);
 	}
 	else if (username.attchEvent) {
 		username.attachEvent("onblur", validateUname);
 	}
+	var pass1 = document.getElementById("password1");
+	if(pass1.addEventListener){
+		pass1.addEventListener("input", validatePass1, false);
+	}
+	else if (pass1.attachEvent){
+		pass1.attachEvent("onblur", validatePass1);
+	}
+	var pass2 = document.getElementById("password2");
+	if(pass2.addEventListener){
+		pass2.addEventListener("input", validatePass2, false);
+	}
+	else if (pass2.attachEvent){
+		pass2.attachEvent("onblur", validatePass2);
+	}
 }
+
 /*	This is where I'm putting bits I'll need later	*/
 /*
 	var pwValid = true;

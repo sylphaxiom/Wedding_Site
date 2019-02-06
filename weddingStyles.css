@@ -17,9 +17,9 @@ nav ul {
 }
 button#login {
 }
-input.error {
+/*input.errRed {
 	box-shadow: 1px 1px 8px #ff5151 inset, -1px -1px 8px #ff5151 inset;
-}
+}*/
 .errRed {
 	color: #ff7c7c!important;
 }
