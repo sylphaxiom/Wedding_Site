@@ -10,7 +10,7 @@ $dateWritten = "12/11/2018";
 $author = "Jacob Pell";
 $pageID = "rsvp";
 $description = "RSVP page and profile sign-up";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $authenticated = 0;
 $siteFlag = 2;
 

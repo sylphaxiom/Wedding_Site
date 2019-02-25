@@ -13,7 +13,7 @@ $dateWritten = "12/14/2018";
 $description = "Registry Page, under construction";
 $title = "Registry and Donations";
 $pageID = "registry";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $siteFlag = 1;
 
 if(!$authenticated) {
