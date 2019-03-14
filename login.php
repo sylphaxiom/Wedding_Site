@@ -30,7 +30,7 @@ function redirect($extra){
 function displayForm($message){
 $thisScript = htmlspecialchars($_SERVER['PHP_SELF']);
 echo <<<FORMDOC
-<form action="$thisScript" method="post" class="col-md-6 text-center mx-auto my-4">
+<form action="$thisScript" method="post" class="col-lg-6 text-center mx-auto my-4">
   <div class="form-group">
     <label for="UserName" class="log">Username</label>
     <input type="text" name="username" id="UserName" size="25" minlength="5" maxlength="10" required/>
@@ -58,8 +58,8 @@ echo "</header>\n";
 $message = "";
 echo <<<BODYDOC
 <article class="my-4 py-4">
-  <h2 class="col-md-4 text-center mx-auto mb-5">Thank you for logging in</h2>
-  <p class="text-center col-md-8 mx-auto">I appreciate your desire to view more about our upcoming wedding! If you are an invited guest, please put in the username and password that was given to you on your invitation. After putting in this username and password, you will be redirected to a registration page where you can RSVP for the wedding, select the members of your family that will be attending, and register for a new username and password. This new username and password will be what you will use for any return visits to this website. If you do not know your username and password, click the link below where you can reset your password. If you use the username and password on the invitation, you will be sent to the registration page once again. I hope you enjoy the website and we look forward to seeing you at our wedding!</p>
+  <h2 class="col-lg-4 text-center mx-auto mb-5">Thank you for logging in</h2>
+  <p class="text-center col-lg-8 mx-auto">I appreciate your desire to view more about our upcoming wedding! If you are an invited guest, please put in the username and password that was given to you on your invitation. After putting in this username and password, you will be redirected to a registration page where you can RSVP for the wedding, select the members of your family that will be attending, and register for a new username and password. This new username and password will be what you will use for any return visits to this website. If you do not know your username and password, click the link below where you can reset your password. If you use the username and password on the invitation, you will be sent to the registration page once again. I hope you enjoy the website and we look forward to seeing you at our wedding!</p>
 </article>
 BODYDOC;
 displayForm($message);

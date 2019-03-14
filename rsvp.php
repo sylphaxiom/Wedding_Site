@@ -149,6 +149,7 @@ echo <<<FORMDOC
   </div>
   <div class="form-row">
     <button type="reset" name="reset" id="reset" class="btn btn-primary btn-lg col-md-2 mx-auto">Reset Form</button>
+    <a href="landing.php" class="btn btn-primary btn-lg col-md-2 mx-auto text-white">Home</a>
     <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg col-md-2 mx-auto">Submit Form</button>
   </div>
 </form>
