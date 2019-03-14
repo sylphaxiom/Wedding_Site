@@ -91,7 +91,7 @@ else
     $verificationPepper = "><,./_=2@`~";
     $verificationCode   = $verificationSalt . $uname . $verificationPepper;
     $verificationCode   = md5($verificationCode);
-    $verificationScript = "http://sullens.net/~jpell/sdev253/project/pwReset.php";
+    $verificationScript = "http://pellwedding.com/pwReset.php";
 
     $body  = "<p>It looks like you requested a password reset.</p>\n";
     $body .= "Name: $fname $lname<br>\n";

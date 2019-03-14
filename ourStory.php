@@ -21,7 +21,7 @@ if(!$authenticated) {
   $title = "Oops! Please Login First";
   require("weddingHead.inc");
   echo "</header>\n";
-  echo "<p class=\"col-md-6 mx-auto my-4 text-center\">In order to view the remainder of the site, you must be a guest and log in. There was a username and password provided to you on your invitation. Please use that username and password to access the RSVP page and register for an account. After your account has been verified, you will be able to access the rest of the site with your new username and password. Please visit the <a href=\"https://www.sullens.net/~jpell/sdev253/project/login.php\">Login Page</a> if you would like to view this website and RSVP for our wedding.</p>\n";
+  echo "<p class=\"col-md-6 mx-auto my-4 text-center\">In order to view the remainder of the site, you must be a guest and log in. There was a username and password provided to you on your invitation. Please use that username and password to access the RSVP page and register for an account. After your account has been verified, you will be able to access the rest of the site with your new username and password. Please visit the <a href=\"https://www.pellwedding.com/login.php\">Login Page</a> if you would like to view this website and RSVP for our wedding.</p>\n";
   require("weddingFoot.inc");
   die();
 }

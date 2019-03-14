@@ -35,7 +35,7 @@ function buildGuest($connection){
 	    FROM guestList";
   $result = mysqli_query($connection,$query) or
   die("<b>Query Failed.</b><br />" . mysqli_error($connection));
-  echo "<select id=\"guest\" name=\"guest[]\" class=\"col-md-11\">\n";
+  echo "<select id=\"guest\" name=\"guest[]\" class=\"col-md-11\">\n\t<option value=\"\">Select additional guests</option>\n";
   while($row = mysqli_fetch_row($result)){
     $fname = $row[0];
     $lname = $row[1];
@@ -57,7 +57,7 @@ if($logUser != "guest") {
   $title = "Oops! Please Login First";
   require("weddingHead.inc");
   echo "</header>\n";
-  echo "<p class=\"col-md-6 mx-auto my-4 text-center\">In order to view the remainder of the site, you must be a guest and log in. There was a username and password provided to you on your invitation. Please use that username and password to access the RSVP page and register for an account. After your account has been verified, you will be able to access the rest of the site with your new username and password. Please visit the <a href=\"https://www.sullens.net/~jpell/sdev253/project/login.php\">Login Page</a> if you would like to view this website and RSVP for our wedding.</p>\n";
+  echo "<p class=\"col-md-6 mx-auto my-4 text-center\">In order to view the remainder of the site, you must be a guest and log in. There was a username and password provided to you on your invitation. Please use that username and password to access the RSVP page and register for an account. After your account has been verified, you will be able to access the rest of the site with your new username and password. Please visit the <a href=\"https://www.pellwedding.com/login.php\">Login Page</a> if you would like to view this website and RSVP for our wedding.</p>\n";
   require("weddingFoot.inc");
   die();
 }
@@ -144,7 +144,7 @@ buildGuest($connection);
 echo <<<FORMDOC
       <small id="selHelp" class="form-text text-muted">Each name selected will appear to the right</small>
     </div>
-    <div id="guestList" class="col-md-4">
+    <div id="guestList" class="col-md-4 list-group container-fluid flex-nowrap">
     </div>
   </div>
   <div class="form-row">

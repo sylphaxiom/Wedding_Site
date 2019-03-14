@@ -7,6 +7,10 @@ Description: This script will serve to validate the login form
 	     for validation and this is the best way to do the work.
 */
 
+/* Globals */
+
+var valArr = Array();
+
 /* run setup functions when page finishes loading */
 
 if (window.addEventListener) {
@@ -140,16 +144,22 @@ function validatePass2(){
 /* Get additional guests and add them to the div */
 
 function addRSVP(){
-	var optValue = document.getElementById("guest").options.value;
+	var select = document.getElementById("guest");
+	var optValue = select.options[select.selectedIndex].value;
+	console.log("optValue = " + optValue)
 	var nameArr = optValue.split(',',2);
 	var name = nameArr[0];
 	var minor = nameArr[1];
 	var container = document.getElementById("guestList");
-	if(minor){
-		container.innerHTML += "<li class=\"divItem\"><i class=\"far fa-times-circle\"></i><p>"+name+"</p></li>\n";
-	}
-	else {
-		container.innerHTML += "<li class=\"divItem\"><i class=\"far fa-times-circle\"></i><p>"+name+"</p><label>Alcohol?<input type=\"checkbox\" name=\"drink[]\" value=\""+name+"\" /></label></li>\n";
+	if((optValue !== "") && (!valArr.includes(optValue))){
+		if(minor==1){
+			container.innerHTML += "<p class=\"list-group-item row\"><i class=\"far fa-times-circle fa-lg\"></i> "+name+" </p>\n";
+			valArr.push(optValue);
+		}
+		else {
+			container.innerHTML += "<p class=\"list-group-item row\"><i class=\"far fa-times-circle fa-lg\"></i> "+name+" <label class=\"mx-4\">Alcohol?<input type=\"checkbox\" name=\"drink[]\" value=\""+name+"\" class=\"mx-2\" /></label></p>\n";
+			valArr.push(optValue);
+		}
 	}
 	createEventListeners();
 }
@@ -160,6 +170,7 @@ function removeRSVP(e){
 	var elem = e.target;
 	var item = elem.parentNode;
 	var parent = document.getElementById("guestList");
+	console.log("innerHTML of item = " + item.innerHTML);
 	parent.removeChild(item);
 	createEventListeners();
 }
@@ -255,5 +266,14 @@ function createEventListeners(){
 		pass2.attachEvent("onblur", validatePass2);
 	}
 	var cancel = document.getElementsByClassName("fa-times-circle");
-	cancel.addEventListener("click", removeRSVP, false);
+	for (var i = 0; i < cancel.length; i++) {
+		cancel[i].addEventListener("click", removeRSVP, false);
+	}
+	var select = document.getElementById("guest");
+	if(select.addEventListener){
+		select.addEventListener("change",addRSVP,false);
+	}
+	else if(select.attchEvent){
+		select.attachEvent("onchange",addRSVP);
+	}
 }
