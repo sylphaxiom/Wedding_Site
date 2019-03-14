@@ -32,11 +32,11 @@ $thisScript = htmlspecialchars($_SERVER['PHP_SELF']);
 echo <<<FORMDOC
 <form action="$thisScript" method="post" class="col-md-6 text-center mx-auto my-4">
   <div class="form-group">
-    <label for="UserName">Username</label>
+    <label for="UserName" class="log">Username</label>
     <input type="text" name="username" id="UserName" size="25" minlength="5" maxlength="10" required/>
   </div>
   <div class="form-group">
-    <label for="Password">Password</label>
+    <label for="Password" class="log">Password</label>
     <input type="password" name="password" id="Password" size="25" minlength="8" maxlength="15" required/>
     <small id="error" class="form-text errRed">$message</small>
   </div>
@@ -66,7 +66,6 @@ displayForm($message);
 }// IF !ISSET
 else
 {
-
   require("connecti2db.inc.php");
 
   $unamePosted = mysqli_real_escape_string($connection,stripslashes($_POST['username']));
@@ -82,6 +81,8 @@ else
       session_start();
       $_SESSION['uname'] = $unamePosted;
       $_SESSION['auth'] = $authenticated;
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
       redirect("rsvp.php");
       exit;
     }//IF GENERIC PASSWORD VALIDATES
@@ -112,7 +113,6 @@ else
       echo "</header>\n";
       $message = "The username/password combination you entered is incorrect.";
       displayForm($message);
-      echo "<p>Vars: username $unamePosted Not found in database</p>\n";
     }//END IF NOT FOUND
 
     $row = mysqli_fetch_row($result);

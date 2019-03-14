@@ -8,6 +8,7 @@ Description: This script will serve to validate the login form
 */
 
 /* run setup functions when page finishes loading */
+
 if (window.addEventListener) {
 	window.addEventListener("load", setUpPage, false);
 	console.log("Loading setUpPage");
@@ -21,6 +22,8 @@ function setUpPage() {
 	createEventListeners();
 }
 
+/* Validate the username field */
+
 function validateUname() 
 {
 	console.log("beginning username validation");
@@ -29,17 +32,139 @@ function validateUname()
 	try
 	{
 		if(!/^\w{5,10}/.test(uname)){
+			console.log("Entering not valid");
 			inValid = false;
-			throw "Username not between 5 and 10 characters. Username is " + uname;
-		} else {
+			throw "Username not between 5 and 10 characters.";
+		}
+		if(inValid == true) {
+			console.log("Entering valid");
 			AjaxFunction("username");
+		}
+		else{
+			console.log("Something went Wrong, validation failed");
 		}
 	}//end try
 	catch(e){
-		console.log(e);
-		document.getElementById("unameHelp").classList.add("errRed");
+		console.log(e + "Username is " + uname);
+		var help = document.getElementById("unameHelp");
+		help.classList.add("errRed");
+		help.classList.remove("validGreen");
+		help.classList.remove("text-muted");
+		help.innerHTML = e;
+		inValid = true;
+	}//end catch
+	finally{
+		createEventListeners();
 	}
 }//end validateUname
+
+/* Validate initial password */
+
+function validatePass1(){
+	console.log("beginning password1 validation");
+	var pass = document.getElementById("password1").value;
+	var help = document.getElementById("pwHelp");
+	try
+	{
+		if(/^\w{8,15}/.test(pass)){
+			console.log("Entering valid length");
+			if (/[A-Z]+/.test(pass)){
+				console.log("Entering valid Cap");
+				if (/[0-9]+/.test(pass)){
+					console.log("Entering valid Num: password passes validation");
+					help.innerHTML = "Password is valid!";
+					help.classList.add("validGreen");
+					help.classList.remove("errRed");
+					help.classList.remove("text-muted");
+				}
+				else {
+					console.log("Entering invalid Num");
+					throw "Password must contain at least 1 number.";
+				}
+			}
+			else {
+				console.log("Entering invalid Cap");
+				throw "Password must contain at least 1 capital letter.";
+			}
+		}
+		else {
+			console.log("Entering invalid length");
+			throw "Password not between 8 and 15 characters.";
+		}
+	}//end try
+	catch(e){
+		console.log(e + "Password is " + pass);
+		help.classList.add("errRed");
+		help.classList.remove("validGreen");
+		help.classList.remove("text-muted");
+		help.innerHTML = e;
+	}//end catch
+	finally{
+		createEventListeners();
+	}
+}//end validatePass1
+
+/* Validate passwords match */
+
+function validatePass2(){
+	console.log("beginning password2 validation");
+	var pass = document.getElementById("password2").value;
+	var validPass = document.getElementById("password1").value;
+	var help = document.getElementById("pwErr");
+	try
+	{
+		if(pass === validPass){
+			console.log("Entering valid password passes validation");
+			help.innerHTML = "Passwords are a match!";
+			help.classList.add("validGreen");
+			help.classList.remove("errRed");
+			help.classList.remove("text-muted");
+		}
+		else {
+			console.log("Entering invalid match");
+			throw "Passwords do not match!";
+		}
+	}//end try
+	catch(e){
+		console.log(e + "Password is " + pass);
+		help.classList.add("errRed");
+		help.classList.remove("validGreen");
+		help.classList.remove("text-muted");
+		help.innerHTML = e;
+	}//end catch
+	finally{
+		createEventListeners();
+	}
+}//end validatePass2
+
+/* Get additional guests and add them to the div */
+
+function addRSVP(){
+	var optValue = document.getElementById("guest").options.value;
+	var nameArr = optValue.split(',',2);
+	var name = nameArr[0];
+	var minor = nameArr[1];
+	var container = document.getElementById("guestList");
+	if(minor){
+		container.innerHTML += "<li class=\"divItem\"><i class=\"far fa-times-circle\"></i><p>"+name+"</p></li>\n";
+	}
+	else {
+		container.innerHTML += "<li class=\"divItem\"><i class=\"far fa-times-circle\"></i><p>"+name+"</p><label>Alcohol?<input type=\"checkbox\" name=\"drink[]\" value=\""+name+"\" /></label></li>\n";
+	}
+	createEventListeners();
+}
+
+/* Remove guests from div list */
+
+function removeRSVP(e){
+	var elem = e.target;
+	var item = elem.parentNode;
+	var parent = document.getElementById("guestList");
+	parent.removeChild(item);
+	createEventListeners();
+}
+
+/* Ajax function to validate username against the database */
 
 function AjaxFunction(item) 
 {
@@ -76,13 +201,17 @@ function AjaxFunction(item)
 				var ajaxDisplay = document.getElementById('unameHelp');
 				var resultText = ajaxRequest.responseText;
 				ajaxDisplay.innerHTML = resultText;
-				if (resultText.includes("yes"))
+				if (resultText.includes("Yes"))
 				{
 					ajaxDisplay.classList.add("validGreen");
+					ajaxDisplay.classList.remove("errRed");
+					ajaxDisplay.classList.remove("text-muted");
 				}
-				else if (resultText.includes("sorry"))
+				else if (resultText.includes("Sorry"))
 				{
 					ajaxDisplay.classList.add("errRed");
+					ajaxDisplay.classList.remove("validGreen");
+					ajaxDisplay.classList.remove("text-muted");
 				}
 				else
 				{
@@ -101,17 +230,30 @@ function AjaxFunction(item)
 	}
 }
 
+/* Create event listeners on load and to re-instate after functions */
+
 function createEventListeners(){
 	var username = document.getElementById("username");
 	if(username.addEventListener){
-		username.addEventListener("blur", validateUname, false);
+		username.addEventListener("input", validateUname, false);
 	}
 	else if (username.attchEvent) {
 		username.attachEvent("onblur", validateUname);
 	}
+	var pass1 = document.getElementById("password1");
+	if(pass1.addEventListener){
+		pass1.addEventListener("input", validatePass1, false);
+	}
+	else if (pass1.attachEvent){
+		pass1.attachEvent("onblur", validatePass1);
+	}
+	var pass2 = document.getElementById("password2");
+	if(pass2.addEventListener){
+		pass2.addEventListener("input", validatePass2, false);
+	}
+	else if (pass2.attachEvent){
+		pass2.attachEvent("onblur", validatePass2);
+	}
+	var cancel = document.getElementsByClassName("fa-times-circle");
+	cancel.addEventListener("click", removeRSVP, false);
 }
-/*	This is where I'm putting bits I'll need later	*/
-/*
-	var pwValid = true;
-  	var pword = document.getElementById("Password");
-*/

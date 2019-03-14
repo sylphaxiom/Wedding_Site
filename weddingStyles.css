@@ -17,9 +17,9 @@ nav ul {
 }
 button#login {
 }
-input.error {
+/*input.errRed {
 	box-shadow: 1px 1px 8px #ff5151 inset, -1px -1px 8px #ff5151 inset;
-}
+}*/
 .errRed {
 	color: #ff7c7c!important;
 }
@@ -40,4 +40,11 @@ img.round {
 div.carousel-item img {
 	max-height: 600px!important;
 	width: auto!important;
+}
+.log {
+	width: 100px!important;
+}
+.fa-times-circle {
+	color:#FF7C7C!important;
+	font-size: 1.5em;
 }

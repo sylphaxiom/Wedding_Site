@@ -47,7 +47,7 @@ echo <<<BODYDOC
   <p class="col-md-8 offset-md-2">Thanks for visiting our wedding website. I hope you enjoyed and will come back again soon! Whenever you come back, just log back in and view whatever you'd like! We look forward to seeing you at the wedding!</p>
   <div class="row mx-auto">
     <a class="btn btn-primary btn-lg ml-auto mr-2 col-md-2" href="login.php">Log In</a>
-    <a class="btn btn-primary btn-lg mr-auto ml-2 col-md-2" href="index.php">Home</a>
+    <a class="btn btn-primary btn-lg mr-auto ml-2 col-md-2" href="landing.php">Home</a>
   </div>
 </article>
 BODYDOC;

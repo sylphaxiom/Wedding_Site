@@ -33,4 +33,6 @@ if(!empty($_GET['uname']))
 	}
 }
 
+if(!empty($_GET['']))
+
 ?>
