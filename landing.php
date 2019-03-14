@@ -26,11 +26,11 @@ require("weddingHead.inc");
 echo <<<ARTDOC
 <article class="container-fluid pt-5">
 	<div class="row">
-		<h2 class="col-md-2 text-right my-auto">Jacob Pell</h2>
-    	<img class="watermark col-md-2 img" src="svg/filigreeLR.svg" width="229" height="276" alt="decorative filigree" />
-    	<img class="col-md-4 img-fluid" src="img/Austyn_and_I.jpg" width="960" height="641" alt="Image of couple" />
-    	<img class="watermark col-md-2 img" src="svg/filigreeLL.svg" width="229" height="276" alt="decorative filigree" />
-    	<h2 class="col-md-2 my-auto">Austyn Kiser</h2>
+		<h2 class="col-3 col-lg-2 text-right my-auto">Jacob Pell</h2>
+    	<img class="watermark col-md-2 img d-none d-lg-block" src="svg/filigreeLR.svg" width="229" height="276" alt="decorative filigree" />
+    	<img class="col-6 col-lg-4 img-fluid" src="img/Austyn_and_I.jpg" width="960" height="641" alt="Image of couple" />
+    	<img class="watermark col-md-2 img d-none d-lg-block" src="svg/filigreeLL.svg" width="229" height="276" alt="decorative filigree" />
+    	<h2 class="col-3 col-lg-2 text-right my-auto">Austyn Kiser</h2>
   	</div>
 </article>
 ARTDOC;
@@ -48,14 +48,14 @@ ARTDOC;
 #Brief "our story" modeled off of the our story page on the site, but with brief information about us.
 echo <<<ARTDOC
 <article class="container-fluid row">
-  <div class="col-md-2">
+  <div class="col-lg-3 col-6 text-center order-1">
     <img class="img round" src="img/linkedin_pic.jpg" width="200" height="200" alt="Profile image of Jacob Pell" />
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-6 order-lg-2 order-last">
     <h2 class="text-center">The Happy Couple</h2>
     <p class="text-justify">Jake and Austyn met back in July of 2016. They took things slow but it was electrifying from the very beginning. They both shared a love of animals and the country where they, one day, hope to live with their family. Jake had 2 kids, Bently and Calliope, Austyn has taken to and loves those kids as if they were her very own, and those kids love her like crazy as well. Jake proposed in October of 2017 and the process of planning and getting ready for the wedding began! Our love has never waivered through our relationship and we are very excited for our wedding in October of 2019. It has been quite the jouney getting here and neither of us would trade it for the world! For those of you who are invited to the wedding, we hope to see you there. For those that we were, unfortunately, not able to invite please feel free to contact either Austyn or Jake and send your congratulations! We would love to hear from you.</p>
   </div>
-  <div class="col-md-2">
+  <div class="col-lg-3 col-6 text-center order-3">
     <img class="img round" src="img/austyn.jpg" width="200" height="200" alt="Profile image of Austyn Kiser" />
   </div>
 </article>
