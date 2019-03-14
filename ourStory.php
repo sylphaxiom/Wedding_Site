@@ -14,7 +14,7 @@ $dateWritten = "12/14/2018";
 $description = "Our Story page for wedding website, no additional functionality on this page";
 $title = "Our Story";
 $pageID = "ourStory";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $siteFlag = 1;
 
 if(!$authenticated) {

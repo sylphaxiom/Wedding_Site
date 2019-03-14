@@ -13,7 +13,7 @@ $dateWritten = "12/14/2018";
 $description = "Date info page, under construction";
 $title = "Wedding Location and Information";
 $pageID = "dateInfo";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $siteFlag = 1;
 
 if(!$authenticated) {

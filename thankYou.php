@@ -13,7 +13,7 @@ $author = "Jacob Pell";
 $dateWritten = "12/12/2018";
 $description = "Thank you page that sends activation email";
 $title = "Thank you for Registering";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $authentication = 0;
 $siteFlag = 2;
 

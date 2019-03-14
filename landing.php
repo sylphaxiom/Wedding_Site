@@ -14,7 +14,7 @@ $dateWritten = "11/08/2018";
 $description = "Landing page of personal wedding website";
 $title = "The Pell Wedding";
 $pageID = "landing";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $authenticated = 0;
 $siteFlag = 0;
 

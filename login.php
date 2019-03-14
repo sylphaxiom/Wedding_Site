@@ -15,7 +15,7 @@ $dateWritten = "12/05/2018";
 $pageID = "login";
 $title = "Log In Page";
 $description = "Login page for the wedding website";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $authenticated = 0;
 $siteFlag = 2;
 
