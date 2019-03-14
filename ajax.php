@@ -7,7 +7,7 @@
 	to be able to validate and function properly.
 */
 
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 
 require("connecti2db.inc.php");
 

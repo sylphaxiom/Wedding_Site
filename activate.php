@@ -7,7 +7,7 @@ $author      = "Jacob Pell";
 $dateWritten = "12/14/2018";
 $description = "Activation page for wedding site";
 $title       = "Account Verification";
-$dbName      = "projectJP";
+$dbName      = "jpellweb_projectJP";
 $siteFlag = 2;
 $authentication = 0;
 require("connecti2db.inc.php");

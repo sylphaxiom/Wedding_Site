@@ -12,7 +12,7 @@ $dateWritten = "12/14/2018";
 $description = "Logout page for the wedding site";
 $title = "Log Out";
 $pageID = "logOut";
-$dbName = "projectJP";
+$dbName = "jpellweb_projectJP";
 $siteFlag = 1;
 $thisScript = htmlspecialchars($_SERVER['PHP_SELF']);
 
