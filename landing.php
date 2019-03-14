@@ -24,7 +24,7 @@ require("weddingHead.inc");
 
 #Top portion of the page with names, photo, and colorful filigre
 echo <<<ARTDOC
-<article class="pt-5">
+<article class="container-fluid pt-5">
 	<div class="row">
 		<h2 class="col-md-2 text-right my-auto">Jacob Pell</h2>
     	<img class="watermark col-md-2 img" src="svg/filigreeLR.svg" width="229" height="276" alt="decorative filigree" />
