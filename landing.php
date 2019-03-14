@@ -68,28 +68,32 @@ echo <<<ARTDOC
     	<li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
     	<li data-target="#carouselIndicators" data-slide-to="1"></li>
     	<li data-target="#carouselIndicators" data-slide-to="2"></li>
+    	<li data-target="#carouselIndicators" data-slide-to="3"></li>
+    	<li data-target="#carouselIndicators" data-slide-to="4"></li>
+    	<li data-target="#carouselIndicators" data-slide-to="5"></li>
+    	<li data-target="#carouselIndicators" data-slide-to="6"></li>
   	</ol>
   	<div class="carousel-inner">
     	<div class="carousel-item active">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/Austyn_and_I.jpg" alt="Happy couple looking at camera">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/Austyn_and_I.jpg" alt="Happy couple looking at camera">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/Austyn_and_I_blanket.jpg" alt="happy couple kissing with blanket on shoulders">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/Austyn_and_I_blanket.jpg" alt="happy couple kissing with blanket on shoulders">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/ring_on_leaf.jpg" alt="Ring on a leaf">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/ring_on_leaf.jpg" alt="Ring on a leaf">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/bw_kiss.jpg" alt="happy couple kissing in black and white">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/bw_kiss.jpg" alt="happy couple kissing in black and white">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/grossed_kiss.jpg" alt="Couple kissing with kids in front lookng grossed out">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/grossed_kiss.jpg" alt="Couple kissing with kids in front lookng grossed out">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/ring_hand.jpg" alt="Holding hands and showing off the ring">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/ring_hand.jpg" alt="Holding hands and showing off the ring">
     	</div>
     	<div class="carousel-item">
-      		<img class="d-block w-auto h-100 mx-auto" src="img/wrestle_kids_ring.jpg" alt="Showing off ring with man wrestling with kids in background">
+      		<img class="d-block w-auto h-auto mx-auto" src="img/wrestle_kids_ring.jpg" alt="Showing off ring with man wrestling with kids in background">
     	</div>
   	</div>
   	<a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">

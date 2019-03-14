@@ -8,6 +8,7 @@ Description: This script will serve to validate the login form
 */
 
 /* run setup functions when page finishes loading */
+
 if (window.addEventListener) {
 	window.addEventListener("load", setUpPage, false);
 	console.log("Loading setUpPage");
@@ -57,6 +58,8 @@ function validateUname()
 	}
 }//end validateUname
 
+/* Validate initial password */
+
 function validatePass1(){
 	console.log("beginning password1 validation");
 	var pass = document.getElementById("password1").value;
@@ -101,6 +104,8 @@ function validatePass1(){
 	}
 }//end validatePass1
 
+/* Validate passwords match */
+
 function validatePass2(){
 	console.log("beginning password2 validation");
 	var pass = document.getElementById("password2").value;
@@ -131,6 +136,33 @@ function validatePass2(){
 		createEventListeners();
 	}
 }//end validatePass2
+
+/* Get additional guests and add them to the div */
+
+function addRSVP(){
+	var optValue = document.getElementById("guest").options.value;
+	var nameArr = optValue.split(',',2);
+	var name = nameArr[0];
+	var minor = nameArr[1];
+	var container = document.getElementById("guestList");
+	if(minor){
+		container.innerHTML += "<li class=\"divItem\"><i class=\"far fa-times-circle\"></i><p>"+name+"</p></li>\n";
+	}
+	else {
+		container.innerHTML += "<li class=\"divItem\"><i class=\"far fa-times-circle\"></i><p>"+name+"</p><label>Alcohol?<input type=\"checkbox\" name=\"drink[]\" value=\""+name+"\" /></label></li>\n";
+	}
+	createEventListeners();
+}
+
+/* Remove guests from div list */
+
+function removeRSVP(e){
+	var elem = e.target;
+	var item = elem.parentNode;
+	var parent = document.getElementById("guestList");
+	parent.removeChild(item);
+	createEventListeners();
+}
 
 /* Ajax function to validate username against the database */
 
@@ -222,10 +254,6 @@ function createEventListeners(){
 	else if (pass2.attachEvent){
 		pass2.attachEvent("onblur", validatePass2);
 	}
+	var cancel = document.getElementsByClassName("fa-times-circle");
+	cancel.addEventListener("click", removeRSVP, false);
 }
-
-/*	This is where I'm putting bits I'll need later	*/
-/*
-	var pwValid = true;
-  	var pword = document.getElementById("Password");
-*/

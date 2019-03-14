@@ -35,7 +35,7 @@ function buildGuest($connection){
 	    FROM guestList";
   $result = mysqli_query($connection,$query) or
   die("<b>Query Failed.</b><br />" . mysqli_error($connection));
-  echo "<select id=\"guest\" name=\"guest[]\" class=\"col-md-11\" multiple>\n";
+  echo "<select id=\"guest\" name=\"guest[]\" class=\"col-md-11\">\n";
   while($row = mysqli_fetch_row($result)){
     $fname = $row[0];
     $lname = $row[1];
@@ -142,7 +142,7 @@ echo <<<FORMDOC
 FORMDOC;
 buildGuest($connection);
 echo <<<FORMDOC
-      <small id="selHelp" class="form-text text-muted">Hold 'Ctrl' or 'Cmd' on your keyboard and click each name to select multiple people.</small>
+      <small id="selHelp" class="form-text text-muted">Each name selected will appear to the right</small>
     </div>
     <div id="guestList" class="col-md-4">
     </div>

@@ -140,7 +140,7 @@ die("<b>Query Failed<b/><br />$query<br />".mysqli_error($connection));
   $headers  = "MIME-Version: 1.0\r\n";
   $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
   $headers .= "To: $fname $lname <$email>\r\n";
-  $headers .= "From: Account Verification <pelljacoba@gmail.com>\r\n";
+  $headers .= "From: Account Verification <groom@pellwedding.com>\r\n";
   $headers .= "X-Priority: 1\r\n";
   $headers .= "X-MSMail-Priority: High\r\n";
   $headers .= "X-Mailer: PHP / ".phpversion() ."\r\n";
@@ -151,15 +151,15 @@ die("<b>Query Failed<b/><br />$query<br />".mysqli_error($connection));
   $verificationPepper = "><,./_=2@`~";
   $verificationCode   = $verificationSalt . $uname . $verificationPepper;
   $verificationCode   = md5($verificationCode);
-  $verificationScript = "http://sullens.net/~jpell/sdev253/project/activate.php";
+  $verificationScript = "https://www.pellwedding.com/activate.php";
 
-  $body  = "<p>One more step and you're done.</p>\n";
-  $body .= "Name: $fname $lname<br>\n";
+  $body  = "<h2>One more step and you're done.</h2>\n";
+  $body .= "<p>Name: $fname $lname<br>\n";
   $body .= "Email: $email<br>\n";
   $body .= "Follow this link to activate your account:<br />";
   $body .= "<a href=\"$verificationScript" . "?ui=$verificationCode";
   $body .= "&parity=$uname\">$verificationScript";
-  $body .= "?ui=$verificationCode&parity=$uname</a>";
+  $body .= "?ui=$verificationCode&parity=$uname</a></p>";
   $body .= "<p>If the link above does not work correctly, copy and paste it ";
   $body .= "into your browser's address bar.</p>\n";
   $body  = stripslashes($body);
@@ -170,7 +170,7 @@ if($sent)
 {
   echo "<article class=\"container text-center mx-auto\">\n";
   echo "<h2 class=\"col-md-6 offset-md-3 mt-4\">Success!</h2>\n";
-  echo "<p class=\"col-md-8 offset-md-2\">A confirmation email has been sent to $email. Please check your email and click the link provided to activate your account and view the rest of the website! Please note, that due to modern email security filters, your email may have been sent to the spam folder. Please look in your spam folder and find the email from: \"Account Verification <pelljacoba@gmail.com>\" and with the subject: \"Please verify your account\". If you are unable to follow the link, you can paste it in the URL bar of your browser. This activation code is valid for a one time use and will be expired after that use.</p>\n";
+  echo "<p class=\"col-md-8 offset-md-2\">A confirmation email has been sent to $email. Please check your email and click the link provided to activate your account and view the rest of the website! Please note, that due to modern email security filters, your email may have been sent to the spam folder. Please look in your spam folder and find the email from: \"Account Verification <groom@pellwedding.com>\" and with the subject: \"Please verify your account\". If you are unable to follow the link, you can paste it in the URL bar of your browser. This activation code is valid for a one time use and will be expired after that use.</p>\n";
   echo "</article>\n";
 }// END IF SENT
 else
