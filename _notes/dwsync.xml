@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="weddingStyles.css" server="C:/wamp64/www/wedding_site/" local="131937261548179629" remote="131937261540000000" Dst="1" />
-<file name="activate.php" server="ftp.jpellweb.com" local="131941619696688797" remote="131941547400000000" Dst="1" />
-<file name="connecti2db.inc.php" server="ftp.jpellweb.com" local="131956033676359404" remote="131944016400000000" Dst="1" />
-<file name="weddingHead.inc" server="ftp.jpellweb.com" local="131938912479211576" remote="131941539000000000" Dst="1" />
-<file name="weddingFoot.inc" server="ftp.jpellweb.com" local="131956033817164413" remote="131943306000000000" Dst="1" />
-<file name="ajax.php" server="ftp.jpellweb.com" local="131941619696808535" remote="131941547400000000" Dst="1" />
-<file name="dateInfo.php" server="ftp.jpellweb.com" local="131941619696938123" remote="131941547400000000" Dst="1" />
-<file name="nav.inc" server="ftp.jpellweb.com" local="131893164770000000" remote="131941539000000000" Dst="1" />
-<file name="metaQueries.inc" server="ftp.jpellweb.com" local="131892060160000000" remote="131941539000000000" Dst="1" />
-<file name="login.php" server="ftp.jpellweb.com" local="131956033759965024" remote="131951452800000000" Dst="1" />
-<file name="logOut.php" server="ftp.jpellweb.com" local="131956033792893026" remote="131951494800000000" Dst="1" />
-<file name="ourStory.php" server="ftp.jpellweb.com" local="131941619697845698" remote="131941548000000000" Dst="1" />
-<file name="pwReset.php" server="ftp.jpellweb.com" local="131941619698035191" remote="131941548000000000" Dst="1" />
-<file name="registry.php" server="ftp.jpellweb.com" local="131941619698334398" remote="131941548000000000" Dst="1" />
-<file name="reset.php" server="ftp.jpellweb.com" local="131941619698533859" remote="131941548000000000" Dst="1" />
-<file name="rsvp.php" server="ftp.jpellweb.com" local="131941619698583722" remote="131941548000000000" Dst="1" />
-<file name="thankYou.php" server="ftp.jpellweb.com" local="131956033810986085" remote="131951481600000000" Dst="1" />
-<file name="wedding.js" server="ftp.jpellweb.com" local="131939001674016553" remote="131941539000000000" Dst="1" />
-<file name="weddingHead2.inc" server="ftp.jpellweb.com" local="131892398090000000" remote="131941539000000000" Dst="1" />
-<file name="weddingStyles.css" server="ftp.jpellweb.com" local="131939004470338956" remote="131941539000000000" Dst="1" />
-<file name="landing.php" server="ftp.jpellweb.com" local="131956033681878100" remote="131951501400000000" Dst="1" />
-<file name="info.php" server="ftp.jpellweb.com" local="131956033682320270" remote="131944921200000000" Dst="1" />
+<file name="activate.php" server="ftp.jpellweb.com" local="131970024594498712" remote="131969956200000000" Dst="2" />
+<file name="connecti2db.inc.php" server="ftp.jpellweb.com" local="131970024594508683" remote="131969955000000000" Dst="2" />
+<file name="weddingHead.inc" server="ftp.jpellweb.com" local="131970043369957280" remote="131969955000000000" Dst="2" />
+<file name="weddingFoot.inc" server="ftp.jpellweb.com" local="131956033817164413" remote="131969955000000000" Dst="2" />
+<file name="ajax.php" server="ftp.jpellweb.com" local="131970024594498712" remote="131969956200000000" Dst="2" />
+<file name="dateInfo.php" server="ftp.jpellweb.com" local="131970024594518658" remote="131969956200000000" Dst="2" />
+<file name="nav.inc" server="ftp.jpellweb.com" local="131893164770000000" remote="131969955000000000" Dst="2" />
+<file name="metaQueries.inc" server="ftp.jpellweb.com" local="131892060160000000" remote="131969955000000000" Dst="2" />
+<file name="login.php" server="ftp.jpellweb.com" local="131970024594578495" remote="131969956200000000" Dst="2" />
+<file name="logOut.php" server="ftp.jpellweb.com" local="131970024594578495" remote="131969956200000000" Dst="2" />
+<file name="ourStory.php" server="ftp.jpellweb.com" local="131970024594588471" remote="131969956200000000" Dst="2" />
+<file name="pwReset.php" server="ftp.jpellweb.com" local="131970024594598440" remote="131969956200000000" Dst="2" />
+<file name="registry.php" server="ftp.jpellweb.com" local="131970024594608418" remote="131969956200000000" Dst="2" />
+<file name="reset.php" server="ftp.jpellweb.com" local="131970024594618388" remote="131969956200000000" Dst="2" />
+<file name="rsvp.php" server="ftp.jpellweb.com" local="131970024594628361" remote="131969956200000000" Dst="2" />
+<file name="thankYou.php" server="ftp.jpellweb.com" local="131970024594638328" remote="131969956200000000" Dst="2" />
+<file name="wedding.js" server="ftp.jpellweb.com" local="131970024594648314" remote="131969955000000000" Dst="2" />
+<file name="weddingHead2.inc" server="ftp.jpellweb.com" local="131892398090000000" remote="131969956200000000" Dst="2" />
+<file name="landing.php" server="ftp.jpellweb.com" local="131970043475437958" remote="131969955000000000" Dst="2" />
+<file name="weddingStyles.css" server="ftp.jpellweb.com" local="131970024594658592" remote="131969956200000000" Dst="2" />
 </dwsync>
