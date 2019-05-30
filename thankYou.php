@@ -88,6 +88,10 @@ if($count != 0)
   echo "<article class=\"container text-center mx-auto\">\n";
   echo "<h2 class=\"col-md-6 offset-md-3 mt-4\">Oops!</h2>\n";
   echo "<p class=\"col-md-8 offset-md-2\">It looks like you've already created an account! If you have forgotten your password you can go to the <a href=\"reset.php\">forgot/reset password</a> page and reset your password!</p>\n";
+  echo "<div class=\"row mx-auto\">\n";
+  echo "\t<a class=\"btn btn-primary btn-lg ml-auto mr-2 col-md-2\" href=\"login.php\">Log In</a>\n";
+  echo "\t<a class=\"btn btn-primary btn-lg mr-auto ml-2 col-md-2\" href=\"landing.php\">Home</a>\n";
+  echo "</div>\n";
   echo "</article>\n";
   require("weddingFoot.inc");
   die();
@@ -105,6 +109,10 @@ if($count != 0)
   echo "<article class=\"container text-center mx-auto\">\n";
   echo "<h2 class=\"col-md-6 offset-md-3 mt-4\">Oops!</h2>\n";
   echo "<p class=\"col-md-8 offset-md-2\">I'm sorry, that username has already been chose. Please go back and re-submit the form with a unique username.</p>\n";
+  echo "<div class=\"row mx-auto\">\n";
+  echo "\t<a class=\"btn btn-primary btn-lg ml-auto mr-2 col-md-2\" href=\"login.php\">Log In</a>\n";
+  echo "\t<a class=\"btn btn-primary btn-lg mr-auto ml-2 col-md-2\" href=\"landing.php\">Home</a>\n";
+  echo "</div>\n";
   echo "</article>\n";
   require("weddingFoot.inc");
   die();
@@ -171,6 +179,10 @@ if($sent)
   echo "<article class=\"container text-center mx-auto\">\n";
   echo "<h2 class=\"col-md-6 offset-md-3 mt-4\">Success!</h2>\n";
   echo "<p class=\"col-md-8 offset-md-2\">A confirmation email has been sent to $email. Please check your email and click the link provided to activate your account and view the rest of the website! Please note, that due to modern email security filters, your email may have been sent to the spam folder. Please look in your spam folder and find the email from: \"Account Verification <groom@pellwedding.com>\" and with the subject: \"Please verify your account\". If you are unable to follow the link, you can paste it in the URL bar of your browser. This activation code is valid for a one time use and will be expired after that use.</p>\n";
+  echo "<div class=\"row mx-auto\">\n";
+  echo "\t<a class=\"btn btn-primary btn-lg ml-auto mr-2 col-md-2\" href=\"login.php\">Log In</a>\n";
+  echo "\t<a class=\"btn btn-primary btn-lg mr-auto ml-2 col-md-2\" href=\"landing.php\">Home</a>\n";
+  echo "</div>\n";
   echo "</article>\n";
 }// END IF SENT
 else
@@ -178,6 +190,10 @@ else
   echo "<article class=\"container text-center mx-auto\">\n";
   echo "<h2 class=\"col-md-6 offset-md-3 mt-4\">Oops!</h2>\n";
   echo "<p class=\"col-md-8 offset-md-2\">Something went wrong while attempting to send you the email verification! Please contact the site administrator for assistance.</p>\n";
+  echo "<div class=\"row mx-auto\">\n";
+  echo "\t<a class=\"btn btn-primary btn-lg ml-auto mr-2 col-md-2\" href=\"login.php\">Log In</a>\n";
+  echo "\t<a class=\"btn btn-primary btn-lg mr-auto ml-2 col-md-2\" href=\"landing.php\">Home</a>\n";
+  echo "</div>\n";
   echo "</article>\n";
 }// END ELSE SENT
 }//END ELSE ISSET
