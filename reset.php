@@ -80,7 +80,7 @@ else
     $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
     $headers .= "To: $fname $lname <$email>\r\n";
-    $headers .= "From: Password Reset <pelljacoba@gmail.com>\r\n";
+    $headers .= "From: Password Reset <groom@pellwedding.com>\r\n";
     $headers .= "X-Priority: 1\r\n";
     $headers .= "X-MSMail-Priority: High\r\n";
     $headers .= "X-Mailer: PHP / ".phpversion() ."\r\n";
@@ -91,7 +91,7 @@ else
     $verificationPepper = "><,./_=2@`~";
     $verificationCode   = $verificationSalt . $uname . $verificationPepper;
     $verificationCode   = md5($verificationCode);
-    $verificationScript = "http://pellwedding.com/pwReset.php";
+    $verificationScript = "http://pellwedding.com/reset.php";
 
     $body  = "<p>It looks like you requested a password reset.</p>\n";
     $body .= "Name: $fname $lname<br>\n";
@@ -116,7 +116,7 @@ else
       
       echo "<article class=\"container text-center mx-auto\">\n";
       echo "<h2 class=\"col-md-6 offset-md-3 mt-4\">Success!</h2>\n";
-      echo "<p class=\"col-md-8 offset-md-2\">A confirmation email has been sent to $email. Please check your email and click the link provided to reset your password. Please note, that due to modern email security filters, your email may have been sent to the spam folder. Please look in your spam folder and find the email from: \"Password Reset <pelljacoba@gmail.com>\" and with the subject: \"A Password Reset Request Has Been Sent\". If you are unable to follow the link, you can paste it in the URL bar of your browser. This reset code is valid for a one time use and will be expired after that use.</p>\n";
+      echo "<p class=\"col-md-8 offset-md-2\">A confirmation email has been sent to $email. Please check your email and click the link provided to reset your password. Please note, that due to modern email security filters, your email may have been sent to the spam folder. Please look in your spam folder and find the email from: \"Password Reset <groom@pellwedding.com>\" and with the subject: \"A Password Reset Request Has Been Sent\". If you are unable to follow the link, you can paste it in the URL bar of your browser. This reset code is valid for a one time use and will be expired after that use.</p>\n";
       echo "</article>\n";
     }// END IF SENT
     else
