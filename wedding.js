@@ -32,15 +32,15 @@ function validateUname()
 {
 	console.log("beginning username validation");
 	var uname = document.getElementById("username").value;
-	var inValid = true;
+	var valid = false;
 	try
 	{
 		if(!/^\w{5,10}/.test(uname)){
 			console.log("Entering not valid");
-			inValid = false;
+			valid = false;
 			throw "Username not between 5 and 10 characters.";
 		}
-		if(inValid == true) {
+		if(valid == true) {
 			console.log("Entering valid");
 			AjaxFunction("username");
 		}
@@ -70,7 +70,7 @@ function validatePass1(){
 	var help = document.getElementById("pwHelp");
 	try
 	{
-		if(/^\w{8,15}/.test(pass)){
+		if(/^\S{8,15}/.test(pass)){
 			console.log("Entering valid length");
 			if (/[A-Z]+/.test(pass)){
 				console.log("Entering valid Cap");
@@ -175,6 +175,27 @@ function removeRSVP(e){
 	createEventListeners();
 }
 
+/* Clear help text */
+
+function clearHelp(){
+	var unamehelp = document.getElementById("unameHelp");
+	var pass1help = document.getElementById("pwHelp");
+	var pass2help = document.getElementById("pwErr");
+	unamehelp.innerHTML = "Username must be 5-10 characters long.";
+	unamehelp.classList.add("text-muted");
+	unamehelp.classList.remove("validGreen");
+	unamehelp.classList.remove("errRed");
+	pass1help.innerHTML = "Password must be 8-15 characters long and contain at least 1 capital letter and 1 number";
+	pass1help.classList.add("text-muted");
+	pass1help.classList.remove("validGreen");
+	pass1help.classList.remove("errRed");
+	pass2help.innerHTML = "Re-type password";
+	pass2help.classList.add("text-muted");
+	pass2help.classList.remove("validGreen");
+	pass2help.classList.remove("errRed");
+	createEventListeners();
+}
+
 /* Ajax function to validate username against the database */
 
 function AjaxFunction(item) 
@@ -275,5 +296,12 @@ function createEventListeners(){
 	}
 	else if(select.attchEvent){
 		select.attachEvent("onchange",addRSVP);
+	}
+	var reset = document.getElementById("reset");
+	if(reset.addEventListener){
+		reset.addEventListener("click",clearHelp,false);
+	}
+	else if(reset.attachEvent){
+		reset.attachEvent("onclick",clearHelp);
 	}
 }
