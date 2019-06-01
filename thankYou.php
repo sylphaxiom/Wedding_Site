@@ -54,21 +54,11 @@ $encPword = md5($salt . $pword . $pepper);
 $gFname = array();
 $gLname = array();
 
-#for($i=0;$i<count($guest);$i++)
-#{
-#    $arrayGuest = explode(",",$guest[$i]);
-#    array_push($name,$arrayGuest[0]);
-#}//END FOR GUEST
-	echo "name is: ";
-	var_dump($name);
-	echo "rsvp is: $rsvp";
-
 for($i=0;$i<count($name);$i++)
 {
   $arrayName = explode(" ",$name[$i]);
   array_push($gFname,$arrayName[0]);
   array_push($gLname,$arrayName[1]);
-	var_dump($arrayName);
 #  rtrim($gLname[$i]);
 #  rtrim($gFname[$i]);
 }//END FOR NAME
@@ -77,11 +67,6 @@ if($rsvp == '1'){
 	array_push($gFname,$fname);
 	array_push($gLname,$lname);
 }
-	
-	echo "gFname is: ";
-	var_dump($gFname);
-	echo "gLname is: ";
-	var_dump($gLname);
 
 $query = "SELECT firstName,lastName
 	  FROM users
@@ -126,9 +111,9 @@ if($count != 0)
 }// END IF COUNT
 
 $query = "INSERT INTO users
-	  (firstName,lastName,phone,street,city,state,zip,rsvp)
+	  (firstName,lastName,phone,street,city,state,zip)
 	  VALUES
-	  ('$fname','$lname','$phone','$street','$city','$state','$zip','1')";
+	  ('$fname','$lname','$phone','$street','$city','$state','$zip')";
 
 $result = mysqli_query($connection,$query) or
 die("<b>Query Failed</b><br />$query<br />".mysqli_error($connection));
