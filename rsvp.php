@@ -31,20 +31,19 @@ function buildState($connection){
 }//END BUILDSTATE
 
 function buildGuest($connection){
-  $query = "SELECT firstName,lastName,minor,rsvp
+  $query = "SELECT firstName,lastName,rsvp
 	    FROM guestList";
   $result = mysqli_query($connection,$query) or
   die("<b>Query Failed.</b><br />" . mysqli_error($connection));
-  echo "<select id=\"guest\" name=\"guest[]\" class=\"col-md-11\">\n\t<option value=\"\">Select additional guests</option>\n";
+  echo "<select id=\"glist\" name=\"glist\" class=\"col-md-11\">\n\t<option value=\"\">Select additional guests</option>\n";
   while($row = mysqli_fetch_row($result)){
     $fname = $row[0];
     $lname = $row[1];
-    $minor = $row[2];
-    $rsvp = $row[3];
+    $rsvp = $row[2];
     if($rsvp){
       echo "\t<option value=\"$fname $lname\" disabled>$fname $lname</option>\n";
     } else {
-      echo "\t<option value=\"$fname $lname,$minor\">$fname $lname</option>\n";
+      echo "\t<option value=\"$fname $lname\">$fname $lname</option>\n";
     }//END IF
   }//END WHILE
   echo "</select>\n";
@@ -127,15 +126,10 @@ echo <<<FORMDOC
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-3">
       <p class="form-label mb-2">RSVP?</p>
       <label for="rsvpY"><input type="radio" id="rsvpY" name="rsvp" value="1" class="mr-2" />Yes</label>
       <label for="rsvpN"><input type="radio" id="rsvpN" name="rsvp" value="0" class="mr-2" checked />No</label>
-    </div>
-    <div class="form-group col-md-2">
-      <p class="form-label mb-2">Alcohol?</p>
-      <label for="alcoholY"><input type="radio" id="alcoholY" name="alcohol" value="1" class="mr-2" />Yes</label>
-      <label for="alcoholN"><input type="radio" id="alcoholN" name="alcohol" value="0" class="mr-2" checked />No</label>
     </div>
     <div class="form-group col-md-4">
       <label for="guest">Additional guests?</label>

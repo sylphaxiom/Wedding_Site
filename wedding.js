@@ -40,6 +40,10 @@ function validateUname()
 			valid = false;
 			throw "Username not between 5 and 10 characters.";
 		}
+		else {
+			console.log("Entering username passed");
+			valid = true;
+		}
 		if(valid == true) {
 			console.log("Entering valid");
 			AjaxFunction("username");
@@ -144,22 +148,15 @@ function validatePass2(){
 /* Get additional guests and add them to the div */
 
 function addRSVP(){
-	var select = document.getElementById("guest");
+	var select = document.getElementById("glist");
 	var optValue = select.options[select.selectedIndex].value;
 	console.log("optValue = " + optValue)
 	var nameArr = optValue.split(',',2);
-	var name = nameArr[0];
-	var minor = nameArr[1];
+	var name = optValue;
 	var container = document.getElementById("guestList");
-	if((optValue !== "") && (!valArr.includes(optValue))){
-		if(minor==1){
-			container.innerHTML += "<p class=\"list-group-item row\"><i class=\"far fa-times-circle fa-lg\"></i> "+name+" </p>\n";
-			valArr.push(optValue);
-		}
-		else {
-			container.innerHTML += "<p class=\"list-group-item row\"><i class=\"far fa-times-circle fa-lg\"></i> "+name+" <label class=\"mx-4\">Alcohol?<input type=\"checkbox\" name=\"drink[]\" value=\""+name+"\" class=\"mx-2\" /></label></p>\n";
-			valArr.push(optValue);
-		}
+	if((optValue !== "") && (!valArr.includes(name))){
+		container.innerHTML += "<p class=\"list-group-item row\"><i class=\"far fa-times-circle fa-lg\"></i> "+name+" <input type=\"hidden\" value=\""+name+"\" name=\"guest[]\" /></p>\n";
+		valArr.push(optValue);
 	}
 	createEventListeners();
 }
@@ -290,7 +287,7 @@ function createEventListeners(){
 	for (var i = 0; i < cancel.length; i++) {
 		cancel[i].addEventListener("click", removeRSVP, false);
 	}
-	var select = document.getElementById("guest");
+	var select = document.getElementById("glist");
 	if(select.addEventListener){
 		select.addEventListener("change",addRSVP,false);
 	}

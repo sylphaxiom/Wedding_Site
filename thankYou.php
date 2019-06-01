@@ -45,36 +45,43 @@ $city = mysqli_real_escape_string($connection,stripslashes($_POST['city']));
 $state = mysqli_real_escape_string($connection,stripslashes($_POST['state']));
 $zip = mysqli_real_escape_string($connection,stripslashes($_POST['zip']));
 $rsvp = mysqli_real_escape_string($connection,stripslashes($_POST['rsvp']));
-$alcohol = mysqli_real_escape_string($connection,stripslashes($_POST['alcohol']));
-$guest = (empty($_POST['guest']) ? array() : $_POST['guest']);//array cannot be escaped or stripped
+$name = (empty($_POST['guest']) ? array() : $_POST['guest']);//array cannot be escaped or stripped
 $salt = (int) date('s');
 $pepper = substr($email,0,3);
 $encPword = md5($salt . $pword . $pepper);
 
 //process guest into id and age arrays
-$under21 = array();
-$name = array();
 $gFname = array();
 $gLname = array();
 
-for($i=0;$i<count($guest);$i++)
-{
-  $arrayGuest = explode(",",$guest[$i]);
-  array_push($name,$arrayGuest[0]);
-  if(preg_match("/\,/",$guest[$i]))
-  {
-    array_push($under21,$arrayGuest[1]);
-  }
-}//END FOR GUEST
+#for($i=0;$i<count($guest);$i++)
+#{
+#    $arrayGuest = explode(",",$guest[$i]);
+#    array_push($name,$arrayGuest[0]);
+#}//END FOR GUEST
+	echo "name is: ";
+	var_dump($name);
+	echo "rsvp is: $rsvp";
 
 for($i=0;$i<count($name);$i++)
 {
   $arrayName = explode(" ",$name[$i]);
   array_push($gFname,$arrayName[0]);
   array_push($gLname,$arrayName[1]);
-  rtrim($gLname[$i]);
-  rtrim($gFname[$i]);
+	var_dump($arrayName);
+#  rtrim($gLname[$i]);
+#  rtrim($gFname[$i]);
 }//END FOR NAME
+
+if($rsvp == '1'){
+	array_push($gFname,$fname);
+	array_push($gLname,$lname);
+}
+	
+	echo "gFname is: ";
+	var_dump($gFname);
+	echo "gLname is: ";
+	var_dump($gLname);
 
 $query = "SELECT firstName,lastName
 	  FROM users
@@ -119,9 +126,9 @@ if($count != 0)
 }// END IF COUNT
 
 $query = "INSERT INTO users
-	  (firstName,lastName,phone,street,city,state,zip,rsvp,alcohol)
+	  (firstName,lastName,phone,street,city,state,zip,rsvp)
 	  VALUES
-	  ('$fname','$lname','$phone','$street','$city','$state','$zip','1','$alcohol')";
+	  ('$fname','$lname','$phone','$street','$city','$state','$zip','1')";
 
 $result = mysqli_query($connection,$query) or
 die("<b>Query Failed</b><br />$query<br />".mysqli_error($connection));
