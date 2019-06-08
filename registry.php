@@ -59,14 +59,28 @@ echo <<<BODYDOC
 <article class="container text-center">
 	<div class="col">
 		<div class="row">
-			<a class="mx-auto" href="https://www.amazon.com/wedding/austyn-kiser-jacob-pell-south-bend-october-2019/registry/1ZG3ZP89O0Q6I" target="_blank">
-				<img class="img-fluid text-center" src="img/registry_photo_us.png" width="730" height="367" alt="Image of couple with text beside it stating all you, one registry wedding registry" />
-			</a>
-			<a class="m-auto" href="https://paypal.me/pellwedding?locale.x=en_US" target="_blank">
-				<img class="img-fluid text-center" src="img/paypal_me_ss.png" width="225" height="227" alt="Image of couple with text below showing it is a link to paypal.me/pellwedding" />
-			</a>
-		</div>
-		<div class="row">
+			<div class="col">
+				<a class="mx-auto" href="https://www.amazon.com/wedding/austyn-kiser-jacob-pell-south-bend-october-2019/registry/1ZG3ZP89O0Q6I" target="_blank">
+					<img class="img-fluid text-center" src="img/registry_photo_us.png" width="730" height="367" alt="Image of couple with text beside it stating all you, one registry wedding registry" />
+				</a>
+			</div>
+			<div class="col">
+				<div class="row">
+					<a class="mx-auto" href="https://paypal.me/pellwedding?locale.x=en_US" target="_blank">
+						<img class="img-fluid text-center" src="img/paypal_me_ss.png" width="225" height="227" alt="Image of couple with text below showing it is a link to paypal.me/pellwedding" />
+					</a>
+				</div>
+				<div class="row">
+					<form class="mx-auto" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_donations" />
+						<input type="hidden" name="business" value="UZESAMGB56PCN" />
+						<input type="hidden" name="item_name" value="Donate money for the wedding of Austyn Kiser and Jacob Pell" />
+						<input type="hidden" name="currency_code" value="USD" />
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+						<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </article>
