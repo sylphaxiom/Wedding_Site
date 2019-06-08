@@ -16,6 +16,7 @@ $pageID = "registry";
 $dbName = "jpellweb_projectJP";
 $siteFlag = 1;
 
+/*
 if(!$authenticated) {
   $title = "Oops! Please Login First";
   require("weddingHead.inc");
@@ -24,19 +25,59 @@ if(!$authenticated) {
   require("weddingFoot.inc");
   die();
 }
-
+*/
 
 require("connecti2db.inc.php");
 require("weddingHead.inc");
-require("nav.inc");
 
-echo <<<ARTDOC
+if ($authenticated) {
+	require("nav.inc");
+}
+
+# Contrucion notification. Put this up if the site is under construction
+# and should not be publically viewable.
+
+/*
+echo <<<CONSTRUCTION
 <article class="container text-center">
   <h2 class="col-md-6 offset-md-3 mx-auto">Oops!</h2>
   <p class="col-md-8 offset-md-2">Please excuse our mess! This site is currently under construction and we will hopefully have things ready for you soon! Please enjoy the rest of the site and this page will be ready before you know it!</p>
   <img src="img/200px-Commons-emblem-Under_construction-green.svg.png" width="200" height="200" class="img-fluid col-md-3 mx-auto" alt="under construction img" />
 </article>
-ARTDOC;
+CONSTRUCTION;
+*/
+
+# Main body of page.
+
+echo <<<BODYDOC
+<article class="container text-center">
+	<h2 class="col-md-6 offset-md-3 mx-auto">Wedding Registry and Donation</h2>
+	<p class="col-md-8 offset-md-2">For our wedding registry, we decided to give people 2 options. We have both a wedding registry and a donation option. We know not everyone likes to get people physical gifts for weddings these days. Sometimes the gifts are expensive, sometimes they just don't seem fully "in the spirit", and sometimes you just don't feel like getting something the happy couple will hardly use. In these cases, simply donating money might be a better option. Below I have given links to both our registry on Amazon and our PayPal where you can donate money. The money that is donated will go to covering the cost of the wedding, our honeymoon, and it will help getting us a head start on our life together.</p>
+	<p class="col-md-8 offset-md-2">No matter what you guys choose, we hope that you will come to the wedding and enjoy yourself! We look forward to seeing you all there are excited for our big day! See you soon!</p>
+</article>
+
+<article class="container text-center">
+	<div class="col">
+		<div class="row">
+			<a class="mx-auto" href="https://www.amazon.com/wedding/austyn-kiser-jacob-pell-south-bend-october-2019/registry/1ZG3ZP89O0Q6I" target="_blank">
+				<img class="img-fluid text-center" src="img/registry_photo_us.png" width="730" height="367" alt="Image of couple with text beside it stating all you, one registry wedding registry" />
+			</a>
+			<a class="m-auto" href="https://paypal.me/pellwedding?locale.x=en_US" target="_blank">
+				<img class="img-fluid text-center" src="img/paypal_me_ss.png" width="225" height="227" alt="Image of couple with text below showing it is a link to paypal.me/pellwedding" />
+			</a>
+		</div>
+		<div class="row">
+		</div>
+	</div>
+</article>
+BODYDOC;
+
+if(!$authenticated){
+	echo "<div class=\"row mx-auto my-4\">\n";
+    echo "\t<a class=\"btn btn-primary btn-lg ml-auto mr-2 col-md-3\" href=\"login.php\">Log In</a>\n";
+    echo "\t<a class=\"btn btn-primary btn-lg mr-auto ml-2 col-md-3\" href=\"landing.php\">Home</a>\n";
+    echo "</div>\n";
+}
 
 mysqli_close($connection);
 require("weddingFoot.inc");

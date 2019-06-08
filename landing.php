@@ -41,7 +41,8 @@ echo <<<ARTDOC
   	<div class="row mt-4">
     	<p class="text-center col-md-10 mx-auto">Thank you for visiting our wedding website! We are pleased to have you as a part of our wedding. If you are a guest and would like some information on the site, please log in using the button below. If you are not a guest and just wanted to view our website and our story, you can find all of that on this home page along with a few of our engagement photos.</p>
   	</div>
-  	<a class="btn btn-primary col-md-4 offset-md-4" id="login" href="login.php" role="button">Log In</a>
+  	<a class="btn btn-primary col-md-4 offset-md-4 my-2" id="login" href="login.php" role="button">Log In</a>
+  	<a class="btn btn-primary col-md-4 offset-md-4 my-2" id="login" href="registry.php" role="button">Donate/Gift</a>
 </article>
 ARTDOC;
 
