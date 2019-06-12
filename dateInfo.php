@@ -87,7 +87,7 @@ echo <<<ARTDOC
 				var request = {
 					location: map.getCenter(),
 					radius: '500',
-					query: 'St. Patrick's County Park'
+					query: 'St. Patrick\'s County Park'
 			  	};
 
 				var service = new google.maps.places.PlacesService(map);
