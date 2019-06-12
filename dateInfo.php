@@ -81,12 +81,12 @@ echo <<<ARTDOC
 		<script>
       		function initMap() {
 				var map = new google.maps.Map(document.getElementById('map'), {
-          		center: {lat: 41.7562869, lng: -86.2705357},
+          		center: {lat: 41.758096, lng: -86.267656},
           		zoom: 15
 				});
 				
 				var marker = new google.maps.Marker({
-					position: {lat: 41.7562869, lng: -86.2705357},
+					position: {lat: 41.758096, lng: -86.267656},
 					map: map,
 					title: 'St. Patrick\'s Park'
 				});
