@@ -101,7 +101,7 @@ echo <<<ARTDOC
 						var marker = new google.maps.Marker({
 							map: map,
 							place: {
-								placeId: results[0].place_id,
+								placeId: ChIJ2XPducgsEYgRhKzXcifi-fE,
 								location: results[0].geometry.location
 							}
 						});
