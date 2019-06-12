@@ -89,7 +89,7 @@ echo <<<ARTDOC
 					position: {lat: 41.7562869, lng: -86.2705357},
 					map: map,
 					title: 'St. Patrick\'s Park'
-				}
+				});
 			}
       	</script>
 	</div>
