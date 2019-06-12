@@ -84,28 +84,11 @@ echo <<<ARTDOC
           		center: {lat: 41.7562869, lng: -86.2705357},
           		zoom: 15
 				});
-				var request = {
-					location: map.getCenter(),
-					radius: '500',
-					query: 'St. Patrick\'s County Park'
-			  	};
-
-				var service = new google.maps.places.PlacesService(map);
-				service.textSearch(request, callback);	
 				
-				// Checks that the PlacesServiceStatus is OK, and adds a marker
-				// using the place ID and location from the PlacesService.
-
-				function callback(results, status) {
-					if (status == google.maps.places.PlacesServiceStatus.OK) {
-						var marker = new google.maps.Marker({
-							map: map,
-							place: {
-								placeId: ChIJ2XPducgsEYgRhKzXcifi-fE,
-								location: results[0].geometry.location
-							}
-						});
-					}
+				var marker = new google.maps.Marker({
+					position: {lat: 41.7562869, lng: -86.2705357},
+					map: map,
+					title: 'St. Patrick\'s Park'
 				}
 			}
       	</script>
