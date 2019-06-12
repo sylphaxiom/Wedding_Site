@@ -117,7 +117,7 @@ echo <<<ARTDOC
 </div>
 ARTDOC;
 
-echo "<script async defer src=\"https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap\"></script>\n";
+echo "<script async defer src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyDX0uVUPKuqBLPO_Q_mmhrKD-9saPEaVoc&callback=initMap\"></script>\n";
 
 mysqli_close($connection);
 require("weddingFoot.inc");
