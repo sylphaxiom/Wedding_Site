@@ -108,21 +108,6 @@ echo <<<ARTDOC
 					}
 				}
 			}
-				
-			// Checks that the PlacesServiceStatus is OK, and adds a marker
-			// using the place ID and location from the PlacesService.
-
-			function callback(results, status) {
-				if (status == google.maps.places.PlacesServiceStatus.OK) {
-					var marker = new google.maps.Marker({
-						map: map,
-						place: {
-							placeId: results[0].place_id,
-							location: results[0].geometry.location
-						}
-					});
-				}
-			}
       	</script>
 	</div>
 	<div class="col-md-6">
