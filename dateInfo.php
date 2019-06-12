@@ -79,7 +79,6 @@ echo <<<ARTDOC
 <div class="row">
 	<div class="col-md-6" id="map">
 		<script>
-      		var map;
       		function initMap() {
 				var map = new google.maps.Map(document.getElementById('map'), {
           		center: {lat: 41.7562869, lng: -86.2705357},
@@ -93,20 +92,20 @@ echo <<<ARTDOC
 
 				var service = new google.maps.places.PlacesService(map);
 				service.textSearch(request, callback);
+			}
 				
-				// Checks that the PlacesServiceStatus is OK, and adds a marker
-				// using the place ID and location from the PlacesService.
-				
-				function callback(results, status) {
-					if (status == google.maps.places.PlacesServiceStatus.OK) {
-						var marker = new google.maps.Marker({
-							map: map,
-							place: {
-								placeId: results[0].place_id,
-								location: results[0].geometry.location
-							}
-						});
-					}
+			// Checks that the PlacesServiceStatus is OK, and adds a marker
+			// using the place ID and location from the PlacesService.
+
+			function callback(results, status) {
+				if (status == google.maps.places.PlacesServiceStatus.OK) {
+					var marker = new google.maps.Marker({
+						map: map,
+						place: {
+							placeId: results[0].place_id,
+							location: results[0].geometry.location
+						}
+					});
 				}
 			}
       	</script>
