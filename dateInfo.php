@@ -77,7 +77,7 @@ ARTDOC;
 echo <<<ARTDOC
 <h2 class="text-center my-5">Travel</h2>
 <div class="row">
-	<div class="col-md-6 h-auto" id="map">
+	<div class="col-md-6 embed-responsive embed-responsive-1by1" id="map">
 		<script>
       		function initMap() {
 				var map = new google.maps.Map(document.getElementById('map'), {
