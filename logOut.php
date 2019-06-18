@@ -23,6 +23,7 @@ if(!isset($_POST['submit']))
 {
 require("nav.inc");
 $uname = $_SESSION['uname'];
+$uid = empty($_SESSION['userID']) ? "" : $_SESSION['userID'];
 $authenticated = $_SESSION['auth'];
 echo <<<BODYDOC
 <article class="container text-center">

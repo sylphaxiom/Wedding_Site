@@ -6,6 +6,7 @@
 */
 session_start();
 $uname = empty($_SESSION['uname']) ? "" : $_SESSION['uname'];
+$uid = empty($_SESSION['userID']) ? "" : $_SESSION['userID'];
 $authenticated = empty($_SESSION['auth']) ? "" : $_SESSION['auth'];
 
 $author = "Jacob Pell";

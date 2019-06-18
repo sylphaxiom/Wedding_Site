@@ -100,7 +100,7 @@ else
     //than the generic username. That tells me that they are a returning
     //user and will need to create a session and validate against the DB
 
-    $query = "SELECT password,active,rID,email
+    $query = "SELECT password,active,rID,email,userID
 	      FROM registration
 	      WHERE username = '$unamePosted'";
 
@@ -120,6 +120,7 @@ else
     $active = $row[1];
     $salt = $row[2];
     $email = $row[3];
+	$userID = $row[4];
     $pepper = substr($email,0,3);
 
     if(!$active){
@@ -144,6 +145,7 @@ else
       $authenticated = 1;
       session_start();
       $_SESSION['uname'] = $unamePosted;
+	  $_SESSION['userID'] = $userID;
       $_SESSION['auth'] = $authenticated;
       redirect("ourStory.php");
     }//END PW MATCH
