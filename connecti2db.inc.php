@@ -8,8 +8,8 @@
 
 // Assign variables
 $host	="127.0.0.1"; // must use 127.0.0.1 with mysqli
-$uname	="jpellweb_jpell"; // insert your MySQL username here
-$pass	="7RWE5jwz91"; // insert your MySQL password here
+$uname	=<username>; // insert your MySQL username here
+$pass	=<password>; // insert your MySQL password here
 
 // Connect to SQL Server
 $connection = mysqli_connect($host,$uname,$pass,$dbName) // attempt to connect to MySQL server
